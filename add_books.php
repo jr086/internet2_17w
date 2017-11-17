@@ -3,6 +3,16 @@ require('config.php');
 
 $status = "";
 
+//$author = $_POST['author'];
+//if(empty($titel)){
+//  echo 'Author must be given';
+//  die;
+//}
+
+// Ich muss noch überprüfen, dass das Feld nicht leer ist und dann verhindern, dass da "Book added" steht,
+// obwohl es nicht in die Datenbank aufgenommen wird
+// Außerdem steht da auch "Book added", wenn ich Buchstaben bei ISBN und price eintrage
+
 if(isset($_POST['author']) && $_POST['title'] && $_POST['isbn'] && $_POST['price']){
   $author = $_POST['author'];
   $title = $_POST['title'];

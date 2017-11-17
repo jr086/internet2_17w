@@ -1,6 +1,12 @@
 <?php
   header('Content-Type: text/html; charset=utf-8');
   require('config.php');
+
+  $deleteID = $_GET['deleteID'];
+  $sql = "DELETE FROM `user` WHERE `user`.`id` = " . $deleteID;
+  echo $sql;
+  mysqli_query($link, $sql);
+
 ?>
 <!doctype html>
 <html lang="de">
@@ -16,6 +22,7 @@
 	<table class="table-striped table">
 		<th>Name</th>
 		<th>E-Mail</th>
+    <th>Actions</th>
 		<?php
 			$stmt = "SELECT * FROM `user`";
 			$result = $link->query($stmt);
@@ -25,6 +32,7 @@
 					echo "<tr>\n";
 					echo "<td>" . $row[1] . "</td>\n";
 					echo "<td>" . $row[3] . "</td>\n";
+          echo "<td><a href='index.php?deleteID=" . $row[0]. "'>delete User</a></td>\n";
 					echo "</tr>";
 				}
 			}

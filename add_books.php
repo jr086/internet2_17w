@@ -19,8 +19,8 @@ if(isset($_POST['author']) && $_POST['title'] && $_POST['isbn'] && $_POST['price
   $isbn = $_POST['isbn'];
   $price = $_POST['price'];
 
-  $stmt = "INSERT INTO `books` (`author`, `title`, `ISBN`, `price`, `book_id`)
-            VALUES ('" . $author . "', '" . $title . "', '" . $isbn ."', '" . $price ."', NULL);";
+  $stmt = "INSERT INTO `books` (`author`, `title`, `ISBN`, `price`, `bookID`)
+            VALUES ('" . $author . "', '" . $title . "', '" . $isbn ."', '" . $price ."', NULL);"; echo $stmt;
   $result = $link->query($stmt);
 
   $status = ">> Book added";

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Nov 2017 um 12:42
+-- Erstellungszeit: 17. Nov 2017 um 13:04
 -- Server-Version: 10.1.19-MariaDB
 -- PHP-Version: 5.6.28
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `bookexchange`
+-- Datenbank: `i217_boox`
 --
 
 -- --------------------------------------------------------
@@ -27,20 +27,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `books` (
-  `Autor` varchar(50) NOT NULL,
-  `Titel` varchar(50) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `title` varchar(50) NOT NULL,
   `ISBN` int(20) NOT NULL,
-  `Preis` float NOT NULL,
-  `ID` int(11) NOT NULL
+  `price` float NOT NULL,
+  `bookID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Daten für Tabelle `books`
---
-
-INSERT INTO `books` (`Autor`, `Titel`, `ISBN`, `Preis`, `ID`) VALUES
-('Hans Müller', 'Die Medien', 1234567890, 10, 1),
-('Hans Müller', 'Die Medien Teil 2', 1234567891, 10, 2);
 
 --
 -- Indizes der exportierten Tabellen
@@ -50,7 +42,7 @@ INSERT INTO `books` (`Autor`, `Titel`, `ISBN`, `Preis`, `ID`) VALUES
 -- Indizes für die Tabelle `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`bookID`);
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
@@ -60,7 +52,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT für Tabelle `books`
 --
 ALTER TABLE `books`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bookID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
